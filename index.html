@@ -1,0 +1,48 @@
+<html>
+    <head>
+         <title> Anagram Checker App by Manasvi </title>
+         <style>
+              * { font-size:50px; font-family: Cambria;}
+                body{ background-color: azure;}
+          </style>
+    </head>
+    <body>
+         <center>
+               <h1> Anagram Checker App </h1>
+               <form onsubmit = "check()">
+               <input type="text"  id="str1"  placeholder="enter first string"/>
+                             <br/><br/> 
+               <input type="text"  id="str2"  placeholder="enter second string"/>
+                             <br/><br/>
+
+                            <input type="submit" value="check"/>
+                            
+                            
+
+
+                              </form>
+                     <h2 id="msg"/>
+               <script>
+                       function check()
+                         {
+                               event.preventDefault();
+                               let str1=document.getElementById("str1");
+                               let str2=document.getElementById("str2");
+
+                               let msg = document.getElementById("msg");
+                               let s1=str1.value;
+                               let ns1=s1.split("").sort().join("");
+                               let s2=str2.value;
+                               let ns2=s2.split("").sort().join("");
+                               
+                                if(ns1===ns2)
+                                     msg.innerHTML="yes";
+                                else
+                                     msg.innerHTML="no";
+
+                              
+                        }
+              </script>
+         </center>
+     </body>
+</html>
